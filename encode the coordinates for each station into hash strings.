@@ -1,0 +1,8 @@
+function extractHash(formatted_json) {
+  var hash_table = [];
+  formatted_json.forEach(function(station) {
+    geohash_string = geoToHash(station.lat,station.lng);
+    hash_table.push(geohash_string);
+  });
+  return hash_table;
+}
