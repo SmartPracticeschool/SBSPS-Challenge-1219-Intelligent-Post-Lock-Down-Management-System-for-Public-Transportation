@@ -3,3 +3,22 @@
 <script src="http://cdn.pubnub.com/pubnub-3.7.1.min.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 browserify js/app.js -o bundle.js
+
+The callback calls the “main” method. Inside “main” you call all your separate methods. Note that to simplify scope “that” has been set to “this” for app.js.
+Take a look at the main pieces of data you get from parsingallstations.json.
+
+
+function formatJSON(json) {
+  var stations = json.root.stations[0].station;
+  var stations_formatted = [];
+  stations.forEach(function(station) {
+    var lat = station.gtfs_latitude[0];
+    var lng = station.gtfs_longitude[0];
+    var name = station.name[0];
+    var abbr = station.abbr[0];
+    new_station = {"lat": lat,"lng": lng,"name": name, "abbr": abbr};
+    stations_formatted.push(new_station);
+  });
+  return stations_formatted;
+}
+
