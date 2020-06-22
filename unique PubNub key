@@ -1,0 +1,9 @@
+function pubs() {
+  pubnub = PUBNUB.init({
+    publish_key: 'PUBLISH_KEY',
+    subscribe_key: 'SUBSCRIBE_KEY'
+  });
+  ...
+    },
+    connect: function() {console.log("PubNub Connected");}
+    ...
