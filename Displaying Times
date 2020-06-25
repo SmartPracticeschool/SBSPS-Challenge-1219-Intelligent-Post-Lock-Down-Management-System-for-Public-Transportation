@@ -1,5 +1,0 @@
-var times = destination.times;
-dest_string = dest_string + "<p><i>" + destination.abbreviation + ":" + "</i><p>";
-times.forEach(function(time) {
-  dest_string = dest_string + " " + time;
-});
